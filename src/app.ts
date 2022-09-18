@@ -11,6 +11,7 @@ export const githubToken = core.getInput('GITHUB_TOKEN', {required: true});
 
 const execCmd = (cmd: string, args: string[] = []) =>
     new Promise((resolve, reject) => {
+        core.debug(`Running: ${cmd} ${args.join(' ')}`);
         const app = spawn(cmd, args, {stdio: 'pipe'});
         let stdout = '';
         app.stdout.on('data', data => {
@@ -29,7 +30,7 @@ const execCmd = (cmd: string, args: string[] = []) =>
 const commitFile = async () => {
     await execCmd('git', ['config', '--global', 'user.email', '46086656+OGKevin-bot@users.noreply.github.com']);
     await execCmd('git', ['config', '--global', 'user.name', 'OGKevin-bot']);
-    await execCmd('git', ['add', 'profile-summary-card-output']);
+    await execCmd('git', ['add', OUTPUT_PATH]);
     await execCmd('git', ['commit', '-m', 'Generate profile summary cards']);
     await execCmd('git', ['push']);
 };
