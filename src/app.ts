@@ -14,12 +14,16 @@ const execCmd = (cmd: string, args: string[] = []) =>
         core.debug(`Running: ${cmd} ${args.join(' ')}`);
         const app = spawn(cmd, args, {stdio: 'pipe'});
         let stdout = '';
+        let stderr = '';
         app.stdout.on('data', data => {
             stdout = data;
         });
+        app.stderr.on('data', data => {
+            stderr = data;
+        });
         app.on('close', code => {
             if (code !== 0 && !stdout.includes('nothing to commit')) {
-                const err = new Error(`${cmd} ${args} \n ${stdout} \n Invalid status code: ${code}`);
+                const err = new Error(`${cmd} ${args} \n ${stdout} \n ${stderr} \n Invalid status code: ${code}`);
                 return reject(err);
             }
             return resolve(code);
