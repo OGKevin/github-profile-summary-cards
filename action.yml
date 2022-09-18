@@ -11,6 +11,9 @@ inputs:
     required: false
     description: 'The UTC offset used in the Productive Time Card.(e.g., 8, -3)'
     default: 0
+  GITHUB_TOKEN:
+    required: true
+    description: 'Token to use for fetching github details'
 
 runs:
   using: 'node16'

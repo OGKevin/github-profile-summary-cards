@@ -1,3 +1,4 @@
+import {githubToken} from '../app';
 import request from '../utils/request';
 
 export class ProfileDetails {
@@ -90,7 +91,7 @@ const fetcher = (token: string, variables: any) => {
 };
 
 export async function getProfileDetails(username: string): Promise<ProfileDetails> {
-    const res = await fetcher(process.env.GITHUB_TOKEN!, {
+    const res = await fetcher(githubToken, {
         login: username
     });
 

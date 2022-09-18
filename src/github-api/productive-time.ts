@@ -1,3 +1,4 @@
+import {githubToken} from '../app';
 import request from '../utils/request';
 
 export class ProfuctiveTime {
@@ -70,7 +71,7 @@ const fetcher = (token: string, variables: any) => {
 
 // get productive time
 export async function getProductiveTime(username: string, until: string, since: string): Promise<ProfuctiveTime> {
-    const userIdResponse = await userIdFetcher(process.env.GITHUB_TOKEN!, {
+    const userIdResponse = await userIdFetcher(githubToken, {
         login: username
     });
 
@@ -79,7 +80,7 @@ export async function getProductiveTime(username: string, until: string, since: 
     }
 
     const userId = userIdResponse.data.data.user.id;
-    const res = await fetcher(process.env.GITHUB_TOKEN!, {
+    const res = await fetcher(githubToken, {
         login: username,
         userId: userId,
         until: until,

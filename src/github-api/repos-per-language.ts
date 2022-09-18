@@ -1,3 +1,4 @@
+import {githubToken} from '../app';
 import request from '../utils/request';
 
 export class RepoLanguageInfo {
@@ -68,7 +69,7 @@ export async function getRepoLanguages(username: string): Promise<RepoLanguages>
     const nodes = [];
 
     while (hasNextPage) {
-        const res: any = await fetcher(process.env.GITHUB_TOKEN!, {
+        const res: any = await fetcher(githubToken, {
             login: username,
             endCursor: cursor
         });

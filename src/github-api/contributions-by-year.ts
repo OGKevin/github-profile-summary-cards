@@ -1,3 +1,4 @@
+import {githubToken} from '../app';
 import request from '../utils/request';
 
 export class ConrtibutionByYear {
@@ -40,7 +41,7 @@ const fetcher = (token: string, variables: any, year: number) => {
 
 export async function getContributionByYear(username: string, year: number): Promise<ConrtibutionByYear> {
     const res = await fetcher(
-        process.env.GITHUB_TOKEN!,
+        githubToken,
         {
             login: username
         },

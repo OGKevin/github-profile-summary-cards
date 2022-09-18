@@ -1,3 +1,4 @@
+import {githubToken} from '../app';
 import request from '../utils/request';
 
 export class CommitLanguageInfo {
@@ -64,7 +65,7 @@ const fetcher = (token: string, variables: any) => {
 export async function getCommitLanguage(username: string): Promise<CommitLanguages> {
     const commitLanguages = new CommitLanguages();
 
-    const res = await fetcher(process.env.GITHUB_TOKEN!, {
+    const res = await fetcher(githubToken, {
         login: username
     });
 
