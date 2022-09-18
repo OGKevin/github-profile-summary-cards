@@ -25,8 +25,8 @@ const execCmd = (cmd: string, args: string[] = []) =>
     });
 
 const commitFile = async () => {
-    await execCmd('git', ['config', '--global', 'user.email', 'profile-summary-cards-bot@example.com']);
-    await execCmd('git', ['config', '--global', 'user.name', 'profile-summary-cards[bot]']);
+    await execCmd('git', ['config', '--global', 'user.email', '46086656+OGKevin-bot@users.noreply.github.com']);
+    await execCmd('git', ['config', '--global', 'user.name', 'OGKevin-bot']);
     await execCmd('git', ['add', OUTPUT_PATH]);
     await execCmd('git', ['commit', '-m', 'Generate profile summary cards']);
     await execCmd('git', ['push']);
