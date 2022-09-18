@@ -40,7 +40,7 @@
         "@vercel/ncc": "0.34.0",
         "@vercel/node": "1.12.1",
         "axios-mock-adapter": "1.18.2",
-        "eslint": "7.22.0",
+        "eslint": "7.32.0",
         "eslint-config-google": "0.14.0",
         "eslint-config-prettier": "8.5.0",
         "eslint-plugin-jest": "25.2.2",
