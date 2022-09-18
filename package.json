@@ -38,7 +38,7 @@
         "@types/node": "16.11.59",
         "@typescript-eslint/parser": "5.2.0",
         "@vercel/ncc": "0.34.0",
-        "@vercel/node": "1.12.1",
+        "@vercel/node": "1.15.4",
         "axios-mock-adapter": "1.18.2",
         "eslint": "7.22.0",
         "eslint-config-google": "0.14.0",
