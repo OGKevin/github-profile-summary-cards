@@ -1,17 +1,17 @@
 import * as core from '@actions/core';
-import { spawn } from 'child_process';
-import { createCommitsPerLanguageCard } from './cards/most-commit-lauguage-card';
-import { createProductiveTimeCard } from './cards/productive-time-card';
-import { createProfileDetailsCard } from './cards/profile-details-card';
-import { createReposPerLanguageCard } from './cards/repos-per-language-card';
-import { createStatsCard } from './cards/stats-card';
-import { generatePreviewMarkdown, OUTPUT_PATH } from './utils/file-writer';
+import {spawn} from 'child_process';
+import {createCommitsPerLanguageCard} from './cards/most-commit-lauguage-card';
+import {createProductiveTimeCard} from './cards/productive-time-card';
+import {createProfileDetailsCard} from './cards/profile-details-card';
+import {createReposPerLanguageCard} from './cards/repos-per-language-card';
+import {createStatsCard} from './cards/stats-card';
+import {generatePreviewMarkdown, OUTPUT_PATH} from './utils/file-writer';
 
-export const githubToken = core.getInput("GITHUB_TOKEN", { required: true })
+export const githubToken = core.getInput('GITHUB_TOKEN', {required: true});
 
 const execCmd = (cmd: string, args: string[] = []) =>
     new Promise((resolve, reject) => {
-        const app = spawn(cmd, args, { stdio: 'pipe' });
+        const app = spawn(cmd, args, {stdio: 'pipe'});
         let stdout = '';
         app.stdout.on('data', data => {
             stdout = data;
@@ -37,9 +37,9 @@ const commitFile = async () => {
 // main
 const action = async () => {
     core.info(`Start...`);
-    const username = core.getInput('USERNAME', { required: true });
+    const username = core.getInput('USERNAME', {required: true});
     core.info(`Username: ${username}`);
-    const utcOffset = Number(core.getInput('UTC_OFFSET', { required: false }));
+    const utcOffset = Number(core.getInput('UTC_OFFSET', {required: false}));
     core.info(`UTC offset: ${utcOffset}`);
     try {
         // Remove old output
