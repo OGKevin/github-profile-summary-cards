@@ -1,9 +1,9 @@
 import core from '@actions/core';
 import rax from 'retry-axios';
-import axios, {AxiosPromise} from 'axios';
+import axios, {AxiosPromise, AxiosRequestConfig} from 'axios';
 
 export default function request(header: any, data: any): AxiosPromise<any> {
-    const x = axios.create({
+    const config: AxiosRequestConfig = {
         url: 'https://api.github.com/graphql',
         method: 'post',
         headers: header,
@@ -20,9 +20,10 @@ export default function request(header: any, data: any): AxiosPromise<any> {
                 core.warning(`Retry attempt #${cfg?.currentRetryAttempt}`);
             }
         }
-    });
+    };
 
+    const x = axios.create(config);
     // rax.attach(x);
 
-    return x.request({});
+    return x.request(config);
 }
