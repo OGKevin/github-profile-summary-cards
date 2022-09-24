@@ -22,7 +22,7 @@ export default function request(header: any, data: any): AxiosPromise<any> {
         }
     });
 
-    rax.attach(x);
+    // rax.attach(x);
 
     return x.request({});
 }
