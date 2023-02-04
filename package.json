@@ -37,7 +37,7 @@
         "@types/jsdom": "20.0.0",
         "@types/node": "16.11.60",
         "@typescript-eslint/parser": "5.38.0",
-        "@vercel/ncc": "0.34.0",
+        "@vercel/ncc": "0.36.1",
         "@vercel/node": "2.5.18",
         "axios-mock-adapter": "1.21.2",
         "eslint": "8.24.0",
