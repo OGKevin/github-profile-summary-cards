@@ -36,7 +36,7 @@
         "@types/jest": "29.0.3",
         "@types/jsdom": "20.0.0",
         "@types/node": "16.11.60",
-        "@typescript-eslint/parser": "5.38.0",
+        "@typescript-eslint/parser": "5.54.0",
         "@vercel/ncc": "0.34.0",
         "@vercel/node": "2.5.18",
         "axios-mock-adapter": "1.21.2",
