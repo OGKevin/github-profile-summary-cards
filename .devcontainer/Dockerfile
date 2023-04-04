@@ -1,5 +1,5 @@
 # [Choice] Node.js version (use -bullseye variants on local arm64/Apple Silicon): 18, 16, 14, 18-bullseye, 16-bullseye, 14-bullseye, 18-buster, 16-buster, 14-buster
-ARG VARIANT=0-16@sha256:333f25235d4a08bbf75078a6b14580298bd7cdb4a8ec8111d0c1eacfcfae6f20
+ARG VARIANT=0-16@sha256:6eadf38faa158412feca08dfabb1abd5fc9c6432228408f0c6e35c6aa95418d7
 FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:${VARIANT}
 
 # [Optional] Uncomment this section to install additional OS packages.
