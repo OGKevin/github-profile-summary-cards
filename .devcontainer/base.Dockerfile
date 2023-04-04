@@ -1,5 +1,5 @@
 # [Choice] Node.js version (use -bullseye variants on local arm64/Apple Silicon): 18, 16, 14, 18-bullseye, 16-bullseye, 14-bullseye, 18-buster, 16-buster, 14-buster
-ARG VARIANT=0-16@sha256:5476ef500c62802ca4f6daca558eb346b40801f3932fd17050ef33c40fcdf413
+ARG VARIANT=0-16@sha256:e9d6300ea7542f79505da76cde09e5de1a8f1c69ad7de6cdfbf1146d92390f88
 FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:${VARIANT}
 
 # Install tslint, typescript. eslint is installed by javascript image
