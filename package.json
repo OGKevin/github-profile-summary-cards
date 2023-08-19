@@ -27,7 +27,7 @@
         "dotenv": "16.0.2",
         "jest-junit": "14.0.1",
         "js-abbreviation-number": "1.4.0",
-        "jsdom": "20.0.0",
+        "jsdom": "22.1.0",
         "moment": "2.29.4",
         "retry-axios": "3.0.0"
     },
