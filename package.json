@@ -29,7 +29,7 @@
         "js-abbreviation-number": "1.4.0",
         "jsdom": "20.0.0",
         "moment": "2.29.4",
-        "retry-axios": "3.0.0"
+        "retry-axios": "3.1.0"
     },
     "devDependencies": {
         "@types/d3": "7.4.0",
